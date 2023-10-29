@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutShop.cshtml";
+}
+@model List<Product>
+<!-- banner starts here -->
+<div class="banner header-text">
+    <div class="owl-banner owl-carousel">
+        <div class="banner-item-01">
+            <div class="text-content">
+                <h4>best offer</h4>
+                <h2>new arrivals on sale</h2>
+            </div>
+        </div>
+        <div class="banner-item-02">
+            <div class="text-content">
+                <h4>flash deals</h4>
+                <h2>get your best products</h2>
+            </div>
+        </div>
+        <div class="banner-item-03">
+            <div class="text-content">
+                <h4>last minute</h4>
+                <h2>grab last minute deals</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- banner ends here -->
+
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>latest products</h2>
+                    <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="product-item">
+                        <a href="#"><img src=@Url.Content(item.Image) alt=""></a>
+                        <div class="down-content">
+                            <a href="#"><h4>@item.Title</h4></a>
+                            <h6>$@item.Price</h6>
+                            <p>@item.Description</p>
+                            <ul class="stars">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
+                            <span>reviews (24)</span>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+           
+        </div>
+    </div>
+</div>
+
+<div class="best-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>about sixteen clothing</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="left-content">
+                    <h4>looking for the best products?</h4>
+                    <p><a rel="nofollow" href="https://templatemo.com/tm-546-sixteen-clothing" target="_parent">this template</a> is free to use for your business websites. however, you have no permission to redistribute the downloadable zip file on any template collection website. <a rel="nofollow" href="https://templatemo.com/contact">contact us</a> for more info.</p>
+                    <ul class="featured-list">
+                        <li><a href="#">lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">consectetur an adipisicing elit</a></li>
+                        <li><a href="#">it aquecorporis nulla aspernatur</a></li>
+                        <li><a href="#">corporis, omnis doloremque</a></li>
+                        <li><a href="#">non cum id reprehenderit</a></li>
+                    </ul>
+                    <a href="about.html" class="filled-button">read more</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-image">
+                    <img src="~/layoutshop/~/LayoutShop/assets/images/feature-image.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>creative &amp; unique <em>sixteen</em> products</h4>
+                            <p>lorem ipsum dolor sit amet, consectetur adipisicing elit. itaque corporis amet elite author nulla.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="filled-button">purchase now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
