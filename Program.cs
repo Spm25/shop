@@ -11,9 +11,6 @@ builder.Services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString)
 
 var app = builder.Build();
 
-var connectionString = builder.Configuration.GetConnectionString("ShopContext");
-builder.Services.AddDbContext<ShopContext>(x => x.UseSqlServer(connectionString));
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
