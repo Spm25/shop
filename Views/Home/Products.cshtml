@@ -63,9 +63,16 @@
             </div>
             <div class="col-md-12">
                 <ul class="pages">
-                    @Html.PagedListPager(Model,page=>Url.Action("Products", new{page=page}))
+                    @Html.PagedListPager(Model,page=>Url.Action("Products", new{page=page}),
+                    new X.PagedList.Web.Common.PagedListRenderOptions
+                    {
+                        LiElementClasses = new List<string> {"page-item"},
+                    PageClasses = new List<string>{"page-link"},
+                    })
+                    
                 </ul>
             </div>
         </div>
     </div>
 </div>
+
