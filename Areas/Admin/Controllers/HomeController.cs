@@ -69,5 +69,15 @@ namespace WebBanHang.Areas.Admin.Controllers
             }
             return View(sanPham);
         }
+        [Route("XoaSP")]
+        [HttpGet]
+        public IActionResult XoaSanPham(int maSanPham)
+        {
+            TempData["Message"] = "";
+            db.Remove(db.Products.Find(maSanPham));
+            db.SaveChanges();
+            TempData["Message"] =  "Sản phẩm đã xóa";
+            return RedirectToAction("SanPham", "Home");
+        }
     }
 }

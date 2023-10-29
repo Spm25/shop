@@ -11,7 +11,7 @@
 <p>
     <a asp-action="ThemSanPham">Create New</a>
 </p>
-
+<p>@TempData["Message"]</p>
 <!-- Default box -->
 <div class="card">
     <div class="card-header">
@@ -73,7 +73,7 @@
                                 </i>
                                 Edit
                             </a>
-                            <a class="btn btn-danger btn-sm" asp-action="SuaSanPham" asp-route-maSanPham="@item.ProductId">
+                            <a class="btn btn-danger btn-sm" asp-action="XoaSanPham" asp-route-maSanPham="@item.ProductId">
                                 <i class="fas fa-trash">
                                 </i>
                                 Delete
