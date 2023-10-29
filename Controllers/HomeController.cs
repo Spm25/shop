@@ -24,7 +24,7 @@ namespace shop.Controllers
 
         public IActionResult Products(int? page)
         {
-            int pageSize = 6;
+            int pageSize = 2;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
             var lstSanPham = db.Products.AsNoTracking().OrderBy(x => x.Title);
             PagedList<Product> lst = new PagedList<Product>(lstSanPham, pageNumber, pageSize);

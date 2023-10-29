@@ -35,37 +35,35 @@
             <div class="col-md-12">
                 <div class="filters-content">
                     <div class="row grid">
-                        <div class="col-lg-4 col-md-4 all des">
-                    
-                            @foreach (var item in Model)
-                            {
-                                <div class="col-md-4">
-                                    <div class="product-item">
-                                        <a href="#"><img src=@Url.Content(item.Image) alt=""></a>
-                                        <div class="down-content">
-                                            <a href="#"><h4>@item.Title</h4></a>
-                                            <h6>$@item.Price</h6>
-                                            <p>@item.Description</p>
-                                            <ul class="stars">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                            <span>reviews (24)</span>
-                                        </div>
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-4 col-md-4 all dev">
+                                <div class="product-item">
+                                    <a href="#"><img src=@Url.Content(item.Image) alt=""></a>
+                                    <div class="down-content">
+                                        <a href="#"><h4>@item.Title</h4></a>
+                                        <h6>@item.Price</h6>
+                                        <p>@item.Description</p>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <span>Reviews (24)</span>
                                     </div>
                                 </div>
-                            }
-                        </div>
+                            </div>
+
+                        }
                         
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
                 <ul class="pages">
-                    <@Html.PagedListPager(Model,page=>Url.Action("Products", new{page=page}))
+                    @Html.PagedListPager(Model,page=>Url.Action("Products", new{page=page}))
                 </ul>
             </div>
         </div>
