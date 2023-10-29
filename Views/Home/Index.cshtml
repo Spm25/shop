@@ -41,7 +41,6 @@
 
             @foreach (var item in Model)
             {
-                if(item.ProductId > 2) break;
                 <div class="col-md-4">
                     <div class="product-item">
                         <a href="#"><img src=@Url.Content(item.Image) alt=""></a>
