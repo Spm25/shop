@@ -1,0 +1,7 @@
+1. Clone reponsitory từ link: https://github.com/Spm25/shop.git
+2. Tải và chạy file sql và chạy(lưu ý tên database là Shop)
+3. Vào VS 2022 -> Tools -> Nuget Package Manager -> Nuget Package Console và chạy đoạn code sau:
+Scaffold-DbContext "CONNECTION STRING" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+ (CONNECTION STRING lấy từ View -> Server explorer -> chuột phải database Shop -> Propreties ->connection string)
+4.Nếu muốn vào Admin:https://localhost:7239/Admin
+5.Nếu muốn vào Admin:https://localhost:7239/Admin/SanPham
