@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using shop.Models;
+using shop.Models.Authentication;
 using System.Diagnostics;
 using X.PagedList;
 
@@ -15,7 +16,7 @@ namespace shop.Controllers
         {
             _logger = logger;
         }
-
+        [Authentication]
         public IActionResult Index()
         {
             var lstSanPham = db.Products.ToList();
