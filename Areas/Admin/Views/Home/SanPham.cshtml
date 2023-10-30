@@ -8,9 +8,6 @@
 @model X.PagedList.IPagedList<Product>;
 <h3>Danh mục các Sản Phẩm</h3>
 
-<p>
-    <a asp-action="ThemSanPham">Create New</a>
-</p>
 <p>@TempData["Message"]</p>
 <!-- Default box -->
 <div class="card">
@@ -44,6 +41,13 @@
                     </th>
                     <th style="width: 25%;text-align: center;" ;text-align: center;>
                         Ảnh
+                    </th>
+                    <th style="width: 15%;text-align: center;" ;text-align: center;>
+                        <a class="btn btn-info btn-sm" asp-action="ThemSanPham">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            New
+                        </a>
                     </th>
                 </tr>
             </thead>
