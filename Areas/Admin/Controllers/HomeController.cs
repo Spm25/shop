@@ -20,13 +20,23 @@ namespace WebBanHang.Areas.Admin.Controllers
             return View();
         }
         [Route("SanPham")]
-        public IActionResult SanPham(int? page) 
+        public IActionResult SanPham(int? page, int? loai) 
         {
             int pageSize = 3;
             int pageNumber = page == null || page < 0 ? 1 : page.Value;
-            var lstSanPham = db.Products.AsNoTracking().OrderBy(x => x.Title);
-            PagedList<Product> lst = new PagedList<Product>(lstSanPham, pageNumber, pageSize);
-            return View(lst); 
+            if(loai == null)
+            {
+                var lstSanPham = db.Products.AsNoTracking().OrderBy(x => x.Title);
+                PagedList<Product> lst = new PagedList<Product>(lstSanPham, pageNumber, pageSize);
+                return View(lst);
+            }
+            else
+            {
+                var lstSanPham = db.Products.Where(l=>l.CategoryId == loai).AsNoTracking().OrderBy(x => x.Title);
+                PagedList<Product> lst = new PagedList<Product>(lstSanPham, pageNumber, pageSize);
+                return View(lst);
+            }
+            
         }
         [Route("AddSP")]
         [HttpGet]
