@@ -5,3 +5,5 @@ Scaffold-DbContext "CONNECTION STRING" Microsoft.EntityFrameworkCore.SqlServer -
  (CONNECTION STRING lấy từ View -> Server explorer -> chuột phải database Shop -> Propreties ->connection string)
 4.Nếu muốn vào Admin:https://localhost:7239/Admin
 5.Nếu muốn vào Admin:https://localhost:7239/Admin/SanPham
+
+Tk:manh mk:123456
